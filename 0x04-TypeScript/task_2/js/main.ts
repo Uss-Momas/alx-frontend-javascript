@@ -66,6 +66,26 @@ executeWork = function (employee) {
     }
 }
 
+type Subjects = 'Math' | 'History';
+
+interface teachClassInterface {
+    (todayClass: Subjects): string;
+}
+
+const teachClass: teachClassInterface = (todayClass) => {
+    if (todayClass === 'Math') {
+        return 'Teaching Math';
+    }
+    return 'Teaching History';
+}
+
+
+
+// executation
+console.log(teachClass('Math'));
+console.log(teachClass('History'));
+
+
 executeWork(createEmployee(200));
 executeWork(createEmployee(1000));
 
